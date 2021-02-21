@@ -5,7 +5,7 @@ import PageFooter from './PageFooter';
 
 const App = () =>
 
-  <div className="d-flex flex-column">
+  <div className="d-flex flex-column div-app">
 
     <PageHeaderNav />
 

@@ -10,7 +10,9 @@ function PageMain(props) {
 
 			<PageMainHeading />
 
-			This is main content.
+			<div className="main-content">
+				This is the content.
+			</div>
 
 		</main>
 	);

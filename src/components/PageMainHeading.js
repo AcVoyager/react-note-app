@@ -3,11 +3,13 @@ import React from 'react'
 function PageMainHeading(props) {
 
 	return (
-		<div className="main-heading">
 
-			this is the heading.
-
+		<div className="container-fluid d-flex main-heading">
+        
+			<p>Assignment 2: Notes App</p>
+        
 		</div>
+
 	);
 
 }

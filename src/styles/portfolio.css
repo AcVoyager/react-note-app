@@ -1,4 +1,9 @@
 /* Highlight current position in Navbar */
+
+.div-app {
+    height: 100vh;
+}
+
 .nav-item-current > .nav-link {
     color: black !important;
 }
@@ -10,4 +15,17 @@
 #copyright-text {
     color: white;
     margin-left: 0;
+}
+
+.main-heading {
+    height: 20vh;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.main-heading > p {
+    color: black;
+    font-size: 3em;
+    margin: auto;
+    /* margin-top: auto;
+    margin-bottom: auto; */
 }
