@@ -1,7 +1,7 @@
 import React from 'react';
-import PageHeaderNav from './PageHeaderNav';
-import PageMain from './PageMain';
-import PageFooter from './PageFooter';
+import PageHeaderNav from '../components/PageHeaderNav';
+import PageMain from '../components/PageMain';
+import PageFooter from '../components/PageFooter';
 
 const App = () =>
 
