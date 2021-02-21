@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Kalam:wght@300&display=swap');
+
+/* .div-app {
+    background-color: #f8f8d9;
+} */
+
+.main-heading {
+    height: 10vh;
+    background-color: #f8f8d9;
+}
+
+.main-heading > p {
+    color: black;
+    font-size: 2em;
+    font-family: 'Dancing Script', cursive;
+    margin: auto;
+    /* margin-top: auto; */
+    /* margin-bottom: auto; */
+}

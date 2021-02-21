@@ -6,7 +6,7 @@ function PageMainHeading(props) {
 
 		<div className="container-fluid d-flex main-heading">
         
-			<p>Assignment 2: Notes App</p>
+			<p>Take a note.</p>
         
 		</div>
 
