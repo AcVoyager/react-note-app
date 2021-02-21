@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NavFooter(props) {
+function PageFooter(props) {
 
 	return (
 		<footer className="footer mt-auto py-3 bg-dark">
@@ -12,4 +12,4 @@ function NavFooter(props) {
 
 }
 
-export default NavFooter;
+export default PageFooter;

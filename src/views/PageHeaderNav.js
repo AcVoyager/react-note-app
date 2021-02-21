@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NavHeader(props) {
+function PageHeaderNav(props) {
 
 	const portfolioLink = "https://acvoyager.github.io/7580page/";
 
@@ -43,4 +43,4 @@ function NavHeader(props) {
 	);
 }
 
-export default NavHeader;
+export default PageHeaderNav;
