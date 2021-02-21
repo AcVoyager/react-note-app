@@ -1,3 +1,7 @@
+import bootstrap from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/portfolio.css'; // consistent with assignment1
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/styles.css';
