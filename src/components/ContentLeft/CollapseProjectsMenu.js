@@ -33,15 +33,17 @@ function CollapseProjectsMenu(props) {
     return arr;
   }
 
+  // when creating a new project, update props.data
   const addToData = (newProjectName) => {
     const newData = Object.assign(props.data);
     newData[newProjectName] = [];
     props.setData(newData);
   }
 
+  // when creating a new project, update props.checkedProjects
   const addToCheckedProjects = (newProjectName) => {
     const newCheckedProjects = props.checkedProjects.slice();
-    newCheckedProjects.push(newProjectName);
+    newCheckedProjects.unshift(newProjectName);
     props.setCheckedProjects(newCheckedProjects);
   }
 

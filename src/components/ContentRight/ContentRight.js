@@ -10,9 +10,16 @@ function ContentRight(props) {
    */
 
   return (
+
+    // <div>
+
+    // </div>
+
+    // test for checkbox logic only
     <div>
       {props.checkedProjects.map((value, index) => <p key={index}>{value}</p>)}
     </div>
+    
   );
 
 }
