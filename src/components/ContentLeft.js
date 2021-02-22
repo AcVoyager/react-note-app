@@ -6,6 +6,10 @@ import "../styles/leftMainContent.css";
 
 function ContentLeft(props) {
 
+  /**
+   * props.data
+   */
+
   return (
 
     <div className="d-flex flex-column">
@@ -18,6 +22,7 @@ function ContentLeft(props) {
       </div>
 
       <div className="d-flex flex-column">
+
         <hr className="mt-0"/>
 
         <button className="btn btn-outline-secondary mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProjectsMenu" 
@@ -25,7 +30,7 @@ function ContentLeft(props) {
           <span>Select Project</span>
         </button>
 
-        <CollapseProjectsMenu data={props.data}  setData={props.setData}/>
+        <CollapseProjectsMenu data={props.data} setData={props.setData}/>
 
       </div>
       
