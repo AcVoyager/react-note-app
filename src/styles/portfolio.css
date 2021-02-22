@@ -1,9 +1,4 @@
 /* Highlight current position in Navbar */
-
-.div-app {
-    height: 100vh;
-}
-
 .nav-item-current > .nav-link {
     color: black !important;
 }

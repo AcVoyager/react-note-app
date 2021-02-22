@@ -1,6 +1,8 @@
 import React from 'react';
-import '../styles/contentleft.css';
 import ProjectButton from './ProjectButton'
+import CollapseProjectsMenu from './CollapseProjectsMenu'
+
+import "../styles/leftMainContent.css";
 
 function ContentLeft(props) {
 
@@ -16,21 +18,15 @@ function ContentLeft(props) {
       </div>
 
       <div className="d-flex flex-column">
-        <hr />
+        <hr className="mt-0"/>
 
-        <div className="mx-auto mb-2">
-          <h5 className="text-muted">Projects</h5>
-        </div>
+        <button className="btn btn-outline-secondary mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProjectsMenu" 
+          aria-expanded="true" aria-controls="collapseProjectsMenu">
+          <span>Select Project</span>
+        </button>
 
-        <div className="d-grid gap-4 mx-2">
-          {
-            MOCKBUTTONS.map((value, index) => {
-              return (
-                <ProjectButton key={index} projectName={value.projectName} btnClass={value.btnClass}/>
-              );
-            })
-          }
-        </div>
+        <CollapseProjectsMenu data={props.data}  setData={props.setData}/>
+
       </div>
       
     </div>
