@@ -6,10 +6,9 @@ function CollapseProjectsMenu(props) {
 
   /**
    * props.data
+   * props.setData()
    */
 
-  const [ifShowForm, setIfShowForm] = useState(false);
-  const [newProjectName, setNewProjectName] = useState("");
   /**
    * `projectArray`:
    * [
@@ -19,25 +18,26 @@ function CollapseProjectsMenu(props) {
    *   },
    * ]
    */
-  const [projectArray, setProjectArray] = useState(() => {
+  const getProjectArray = () => {
     const entries = Object.entries(props.data);
-    return entries.map((entry, index) => {
+    const arr =  entries.map((entry, index) => {
       const resultObj = {}
       const [name, value] = entry;
       resultObj.projectName = name;
       resultObj.noteNum = value.length;
       return resultObj;
     });
-  });
+    // console.log(arr); // debug
+    return arr;
+  }
 
-  useEffect(() => {
-    const tempArr = projectArray.slice();
-    tempArr.push({
-      projectName: newProjectName,
-      noteNum: 0
-    });
-    setProjectArray(tempArr);
-  }, [newProjectName])
+  const addToData = (newProjectName) => {
+    const newData = Object.assign(props.data);
+    newData[newProjectName] = [];
+    props.setData(newData);
+  }
+
+  const [ifShowForm, setIfShowForm] = useState(false);
 
   return (
     <div className="collapse show mx-1 mt-1" id="collapseProjectsMenu">
@@ -52,10 +52,10 @@ function CollapseProjectsMenu(props) {
         {
         ifShowForm? 
           <CreatingProjectForm 
-            projectArray={projectArray}
+            data={props.data}
             onSubmitClick={ (name) => {
               // console.log(name); //debug
-              setNewProjectName(name);
+              addToData(name);
               setIfShowForm(false);
             } }
             onCancelClick={ () => setIfShowForm(false) }/> 
@@ -66,7 +66,7 @@ function CollapseProjectsMenu(props) {
 
       <ul className="list-group mb-3">
         {
-          projectArray.map((project, index) => 
+          getProjectArray().map((project, index) => 
             project.projectName?
             <ProjectItem key={index} projectName={project.projectName} num={project.noteNum}/>
             : null

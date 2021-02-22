@@ -4,7 +4,7 @@ import ValidatableTextInput from '../ValidatableTextInput';
 function CreatingProjectForm(props) {
 
   /**
-   * props.projectArray
+   * props.data
    * props.onSubmitClick()
    * props.onCancelClick()
    */
@@ -28,7 +28,7 @@ function CreatingProjectForm(props) {
     if(str.length === 0){
       setMessage("The name of the new project cannot be empty!");
     }
-    else if(props.projectArray.map(value => value.projectName).includes(str)) {
+    else if(Object.keys(props.data).includes(str)) {
       setMessage(`Name "${str}" is already used!`);
     }
     else {

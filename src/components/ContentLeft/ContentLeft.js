@@ -7,6 +7,7 @@ function ContentLeft(props) {
 
   /**
    * props.data
+   * props.setData()
    */
 
   return (
