@@ -1,5 +1,7 @@
-import React from 'react'
-import ProjectArea from './ProjectArea'
+import React from 'react';
+import ProjectArea from './ProjectArea';
+
+import "../../styles/rightMainContent.css";
 
 function ContentRight(props) {
 
@@ -8,6 +10,7 @@ function ContentRight(props) {
    * props.setData()
    * props.checkedProjects
    * props.setCheckedProjects()
+   * props.noteTypes
    */
 
   return (
@@ -16,7 +19,8 @@ function ContentRight(props) {
       {
         props.checkedProjects.map((projectName, index) => 
           <ProjectArea key={index}
-            projectName={projectName} noteArray={props.data[projectName]}/>
+            projectName={projectName} noteArray={props.data[projectName]}
+            noteTypes={props.noteTypes}/>
         )
       }
     </div>

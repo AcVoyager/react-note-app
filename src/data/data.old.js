@@ -21,38 +21,7 @@ export default {
             type: NOTE_TYPE.LINK,
             url: "https://reactstrap.github.io/",
             text: "Reactstrap docs"
-        },
-        {
-            type: NOTE_TYPE.TEXT,
-            title: "Create a new project",
-            text: "cd to the project directory\nnpx create-react-app project-name\ncd project-name\nnpm start"
-        },
-        {
-            type: NOTE_TYPE.LINK,
-            url: "https://reactjs.org/docs/getting-started.html",
-            text: "React docs"
-        },
-        {
-            type: NOTE_TYPE.LINK,
-            url: "https://reactstrap.github.io/",
-            text: "Reactstrap docs"
-        },
-        {
-            type: NOTE_TYPE.TEXT,
-            title: "Create a new project",
-            text: "cd to the project directory\nnpx create-react-app project-name\ncd project-name\nnpm start"
-        },
-        {
-            type: NOTE_TYPE.LINK,
-            url: "https://reactjs.org/docs/getting-started.html",
-            text: "React docs"
-        },
-        {
-            type: NOTE_TYPE.LINK,
-            url: "https://reactstrap.github.io/",
-            text: "Reactstrap docs"
-        },
-        
+        }
     ],
     [NO_PROJECT]: [
         {

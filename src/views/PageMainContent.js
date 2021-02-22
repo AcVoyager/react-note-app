@@ -3,12 +3,13 @@ import ContentLeft from '../components/ContentLeft/ContentLeft';
 import ContentRight from '../components/ContentRight/ContentRight';
 
 import '../styles/mainContent.css';
-import originalData from "../data/data";
+import originalData, {NOTE_TYPE} from "../data/data";
 
 function PageMainContent(props) {
 
   const [data, setData] = useState(originalData);
   const [checkedProjects, setCheckedProjects] = useState(Object.keys(data));
+  const [noteTypes, setNoteTypes] = useState(NOTE_TYPE);
 
   return (
     <div className="row main-content">
@@ -24,7 +25,8 @@ function PageMainContent(props) {
 				<div className="col-md-9 main-content-right">
           <ContentRight 
             data={data} setData={setData}
-            checkedProjects={checkedProjects} setCheckedProjects={setCheckedProjects}/>
+            checkedProjects={checkedProjects} setCheckedProjects={setCheckedProjects}
+            noteTypes={noteTypes}/>
 				</div>
 
     </div>

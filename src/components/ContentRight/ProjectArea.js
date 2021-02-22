@@ -6,10 +6,11 @@ function ProjectArea(props) {
   /**
    * props.projectName
    * props.noteArray
+   * props.noteTypes
    */
 
   return (
-    <div className="row project-area">
+    <div className="container-fluid project-area">
       
       <div>
         <h4>{props.projectName}</h4>
@@ -17,10 +18,10 @@ function ProjectArea(props) {
 
       <hr/>
 
-      <div>
+      <div className="notes-area row">
         {
           props.noteArray.map((note, index) => 
-            <Note key={index} noteInfo={note}/>
+            <Note key={index} noteInfo={note} noteTypes={props.noteTypes}/>
           )
         }
       </div>
