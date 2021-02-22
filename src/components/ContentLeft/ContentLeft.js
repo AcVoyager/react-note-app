@@ -8,6 +8,8 @@ function ContentLeft(props) {
   /**
    * props.data
    * props.setData()
+   * props.checkedProjects
+   * props.setCheckedProjects()
    */
 
   return (
@@ -30,7 +32,9 @@ function ContentLeft(props) {
           <span>Toggle projects panel</span>
         </button>
 
-        <CollapseProjectsMenu data={props.data} setData={props.setData}/>
+        <CollapseProjectsMenu 
+          data={props.data} setData={props.setData}
+          checkedProjects={props.checkedProjects} setCheckedProjects={props.setCheckedProjects}/>
 
       </div>
       
@@ -41,42 +45,3 @@ function ContentLeft(props) {
 }
 
 export default ContentLeft;
-
-const MOCKBUTTONS = [
-  {
-    projectName: "project1",
-    btnClass: "btn-outline-primary"
-  },
-  {
-    projectName: "project2",
-    btnClass: "btn-outline-secondary"
-    // btnStyle: {
-    //   opacity: "0.4",
-    //   backgroundColor: "orange"
-    // }
-  },
-  {
-    projectName: "project3",
-    btnClass: "btn-outline-success"
-    // btnStyle: {
-    //   opacity: "0.5",
-    //   backgroundColor: "yellow"
-    // }
-  },
-  {
-    projectName: "project4",
-    btnClass: "btn-outline-danger"
-    // btnStyle: {
-    //   opacity: "0.6",
-    //   backgroundColor: "blue"
-    // }
-  },
-  {
-    projectName: "project5",
-    btnClass: "btn-outline-info"
-    // btnStyle: {
-    //   opacity: "0.7",
-    //   backgroundColor: "purple"
-    // }
-  },
-];

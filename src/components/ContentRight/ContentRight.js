@@ -2,9 +2,16 @@ import React from 'react'
 
 function ContentRight(props) {
 
+  /**
+   * props.data
+   * props.setData()
+   * props.checkedProjects
+   * props.setCheckedProjects()
+   */
+
   return (
     <div>
-      Right
+      {props.checkedProjects.map((value, index) => <p key={index}>{value}</p>)}
     </div>
   );
 

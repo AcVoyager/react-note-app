@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import CreatingProjectForm from './CreatingProjectForm';
 import ProjectItem from './ProjectItem';
 
@@ -7,6 +7,8 @@ function CollapseProjectsMenu(props) {
   /**
    * props.data
    * props.setData()
+   * props.checkedProjects
+   * props.setCheckedProjects()
    */
 
   /**
@@ -37,6 +39,12 @@ function CollapseProjectsMenu(props) {
     props.setData(newData);
   }
 
+  const addToCheckedProjects = (newProjectName) => {
+    const newCheckedProjects = props.checkedProjects.slice();
+    newCheckedProjects.push(newProjectName);
+    props.setCheckedProjects(newCheckedProjects);
+  }
+
   const [ifShowForm, setIfShowForm] = useState(false);
 
   return (
@@ -56,6 +64,7 @@ function CollapseProjectsMenu(props) {
             onSubmitClick={ (name) => {
               // console.log(name); //debug
               addToData(name);
+              addToCheckedProjects(name);
               setIfShowForm(false);
             } }
             onCancelClick={ () => setIfShowForm(false) }/> 
@@ -68,7 +77,9 @@ function CollapseProjectsMenu(props) {
         {
           getProjectArray().map((project, index) => 
             project.projectName?
-            <ProjectItem key={index} projectName={project.projectName} num={project.noteNum}/>
+            <ProjectItem key={index} 
+              projectName={project.projectName} num={project.noteNum}
+              checkedProjects={props.checkedProjects} setCheckedProjects={props.setCheckedProjects}/>
             : null
           )
         }
