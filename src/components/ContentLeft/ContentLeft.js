@@ -14,7 +14,7 @@ function ContentLeft(props) {
 
   return (
 
-    <div className="d-flex flex-column content-left">
+    <div className="container-fluid d-flex flex-column">
       
       <div className="mx-auto my-3">
         {/* use padding to adjust the w and h of the button */}
