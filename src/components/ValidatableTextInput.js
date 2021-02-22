@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function ValidatableTextInput(props) {
 
@@ -8,12 +8,11 @@ function ValidatableTextInput(props) {
    * props.helpID
    * props.helpInfo
    * props.message
-   * props.validateAndSetMessage(str)
-   * props.tellParentIfValid(ifValid)
+   * props.text
+   * props.setText()
+   * props.isValid
    */
 
-  const [isValid, setIsValid] = useState(false);
-  const [text, setText] = useState("");
   const COLOR = {
     SUCCESS: "#00B74A",
     ERROR: "#F93154" 
@@ -22,17 +21,16 @@ function ValidatableTextInput(props) {
   return (
     <div>
 
-      <label for={props.inputID} className="form-label">{props.inputName}</label>
+      <label htmlFor={props.inputID} className="form-label">{props.inputName}</label>
         <input type="text" className="form-control" id={props.inputID} aria-describedby={props.helpID}
-          value={text}
+          value={props.text}
           onChange={e => {
-            setText(e.target.value);
-            setIsValid(props.validateAndSetMessage(e.target.value));
-            props.tellParentIfValid(isValid);
+            props.setText(e.target.value);
         }}/>
+
         <div id={props.helpID} className="form-text">{props.helpInfo}</div>
         {
-          <p style={{color: isValid ? COLOR.SUCCESS : COLOR.ERROR}}>{props.message}</p>
+          <p style={{color: props.isValid ? COLOR.SUCCESS : COLOR.ERROR}}>{props.message}</p>
         }
       
     </div>

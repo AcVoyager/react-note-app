@@ -17,6 +17,35 @@ function CollapseProjectsMenu(props) {
     </li>
 
   const [ifShowForm, setIfShowForm] = useState(false);
+  const [newProjectName, setNewProjectName] = useState("");
+  /**
+   * `projectArray`:
+   * [
+   *   {
+   *    projectName: xxx,
+   *    noteNum: 0
+   *   },
+   * ]
+   */
+  const [projectArray, setProjectArray] = useState(() => {
+    const entries = Object.entries(props.data);
+    return entries.map((entry, index) => {
+      const resultObj = {}
+      const [name, value] = entry;
+      resultObj.projectName = name;
+      resultObj.noteNum = value.length;
+      return resultObj;
+    });
+  });
+
+  useEffect(() => {
+    const tempArr = projectArray.slice();
+    tempArr.push({
+      projectName: newProjectName,
+      noteNum: 0
+    });
+    setProjectArray(tempArr);
+  }, [newProjectName])
 
   return (
     <div className="collapse show mx-1 mt-1" id="collapseProjectsMenu">
@@ -28,14 +57,26 @@ function CollapseProjectsMenu(props) {
           Create a new project
         </button>
 
-        {ifShowForm? <CreatingProjectForm data={props.data}/> : null}
+        {
+        ifShowForm? 
+          <CreatingProjectForm 
+            projectArray={projectArray}
+            onSubmitClick={ (name) => {
+              // console.log(name); //debug
+              setNewProjectName(name);
+              setIfShowForm(false);
+            } }
+            onCancelClick={ () => setIfShowForm(false) }/> 
+          : null
+        }
         
       </div>
 
       <ul className="list-group">
         {
-          Object.entries(props.data).map(([projectName, value], index) => {
-            return drawItem(projectName, value.length, index);
+          projectArray.map((project, index) => {
+            return project.projectName? 
+              drawItem(project.projectName, project.noteNum, index) : null;
           })
         }
       </ul>
