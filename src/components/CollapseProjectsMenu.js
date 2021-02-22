@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ValidatableTextInput from './ValidatableTextInput';
 
 function CollapseProjectsMenu(props) {
 
@@ -12,23 +13,23 @@ function CollapseProjectsMenu(props) {
     </li>
 
   const [ifShowForm, setIfShowForm] = useState(false);
-  const [canSubmit, setCanSubmit] = useState(false);
-  const [text, setText] = useState("");
-  const [errMsg, setErrMsg] = useState("");
-  const COLOR = {
-    SUCCESS: "#00B74A",
-    ERROR: "#F93154" 
-  };
+  const [ifEnableButton, setIfEnableButton] = useState(false);
+  const [ifInputValid, setIfInputValid] = useState(false);
+  const [message, setMessage] = useState("");
+  
+  useEffect(() => {
+    setIfEnableButton(ifInputValid); // Here the button only depends on one input field.
+  }, [ifInputValid]);
 
-  const validate = str => {
+  const validateAndSetMessage = str => {
     if(str.length == 0){
-      setErrMsg("The name of the new project cannot be empty!");
+      setMessage("The name of the new project cannot be empty!");
     }
     else if(Object.keys(props.data).includes(str)) {
-      setErrMsg(`Name "${str}" is already used!`);
+      setMessage(`Name "${str}" is already used!`);
     }
     else {
-      setErrMsg(`Name "${str}" is valid!`);
+      setMessage(`Name "${str}" is valid!`);
       return true;
     }
     return false;
@@ -36,8 +37,18 @@ function CollapseProjectsMenu(props) {
 
   const createProjectForm = () => 
     <form>
+
       <div className="mb-3">
-        <label for="inputProjectName" className="form-label">Project Name</label>
+        <ValidatableTextInput
+          inputID="inputProjectName"
+          inputName="Project Name"
+          helpID="createHelp"
+          helpInfo="Enter the new project name here."
+          message={message}
+          validateAndSetMessage={(str) => validateAndSetMessage(str)}
+          tellParentIfValid={(isValid) => setIfInputValid(isValid)}
+        />
+        {/* <label for="inputProjectName" className="form-label">Project Name</label>
         <input type="text" className="form-control" id="inputProjectName" aria-describedby="createHelp"
           value={text}
           onChange={e => {
@@ -47,10 +58,10 @@ function CollapseProjectsMenu(props) {
         <div id="createHelp" className="form-text">Enter the new project name here.</div>
         {
           <p style={{color: canSubmit ? COLOR.SUCCESS : COLOR.ERROR}}>{errMsg}</p>
-        }
+        } */}
       </div>
       <div className="d-flex justify-content-start">
-        <button type="button" className="btn btn-primary me-3" disabled={!canSubmit}>Submit</button>
+        <button type="button" className="btn btn-primary me-3" disabled={!ifEnableButton}>Submit</button>
         <button type="button" className="btn btn-danger">Cancel</button>
       </div>
     </form>
