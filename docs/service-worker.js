@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/cs7580sp21-seattle/chang_xu_assignment2/precache-manifest.b90b299b2667e96856160ca580c5aff9.js"
+  "/cs7580sp21-seattle/chang_xu_assignment2/precache-manifest.8568873f6bf1e69e4fd53c3c37fae4ae.js"
 );
 
 workbox.clientsClaim();
