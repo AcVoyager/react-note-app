@@ -1,8 +1,7 @@
 import React from 'react';
-import ProjectButton from './ProjectButton'
 import CollapseProjectsMenu from './CollapseProjectsMenu'
 
-import "../styles/leftMainContent.css";
+import "../../styles/leftMainContent.css";
 
 function ContentLeft(props) {
 
@@ -12,7 +11,7 @@ function ContentLeft(props) {
 
   return (
 
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column content-left">
       
       <div className="mx-auto my-3">
         {/* use padding to adjust the w and h of the button */}
@@ -25,9 +24,9 @@ function ContentLeft(props) {
 
         <hr className="mt-0"/>
 
-        <button className="btn btn-outline-secondary mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProjectsMenu" 
+        <button className="btn btn-outline-secondary mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProjectsMenu" 
           aria-expanded="true" aria-controls="collapseProjectsMenu">
-          <span>Select Project</span>
+          <span>Toggle projects panel</span>
         </button>
 
         <CollapseProjectsMenu data={props.data} setData={props.setData}/>

@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import CreatingProjectForm from './CreatingProjectForm';
+import ProjectItem from './ProjectItem';
 
 function CollapseProjectsMenu(props) {
 
   /**
    * props.data
    */
-
-  const drawItem = (projectName, num, key) => 
-    <li className="list-group-item d-flex justify-content-between align-items-center" key={key}>
-      <div>
-        <input className="form-check-input me-1" type="checkbox" value="" aria-label={projectName} />
-        <span>{projectName}</span>
-      </div>
-      <span className="badge bg-primary rounded-pill">{num}</span>
-    </li>
 
   const [ifShowForm, setIfShowForm] = useState(false);
   const [newProjectName, setNewProjectName] = useState("");
@@ -72,12 +64,13 @@ function CollapseProjectsMenu(props) {
         
       </div>
 
-      <ul className="list-group">
+      <ul className="list-group mb-3">
         {
-          projectArray.map((project, index) => {
-            return project.projectName? 
-              drawItem(project.projectName, project.noteNum, index) : null;
-          })
+          projectArray.map((project, index) => 
+            project.projectName?
+            <ProjectItem key={index} projectName={project.projectName} num={project.noteNum}/>
+            : null
+          )
         }
       </ul>
 
