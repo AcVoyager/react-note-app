@@ -11,9 +11,11 @@ function PageMainContent(props) {
   const [noteTypes, setNoteTypes] = useState(NOTE_TYPE);
 
   const pushToData = (projectName, noteInfo) => {
-    const newData = Object.assign(data);
+    // const newData = Object.assign(data);
+    // newData[projectName].push(noteInfo);
+    const newData = JSON.parse(JSON.stringify(data));
     newData[projectName].push(noteInfo);
-    console.log(`${JSON.stringify(noteInfo)} is added to ${projectName}`); //debug
+    // console.log(`${JSON.stringify(noteInfo)} is added to ${projectName}`); //debug
     setData(newData);
   }
 
