@@ -18,7 +18,7 @@ function TextNoteContent(props) {
       setMessage("");
       setIsJustOpen(false);
       props.setIfEmpty(true);
-      return false;
+      return true;
     }
     if(str.length === 0){
       setMessage("");
@@ -32,7 +32,7 @@ function TextNoteContent(props) {
         return false;
       }
       else {
-        setMessage(`Content for the new text note: ${str}`);
+        setMessage(`Content: ${str}`);
       }
     }
     return true;

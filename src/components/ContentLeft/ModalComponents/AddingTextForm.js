@@ -7,9 +7,9 @@ function AddingTextForm(props) {
   const WARNING_COLOR = "#FF7700";
   
   const [ifTitleEmpty, setIfTitleEmpty] = useState(true);
-  const [ifTitleValid, setIfTitleValid] = useState(false);
+  const [ifTitleValid, setIfTitleValid] = useState(true);
   const [ifContentEmpty, setIfContentEmpty] = useState(true);
-  const [ifContentValid, setIfContentValid] = useState(false);
+  const [ifContentValid, setIfContentValid] = useState(true);
 
   return (
     <div className="my-2">

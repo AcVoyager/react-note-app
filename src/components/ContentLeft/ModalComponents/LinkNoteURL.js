@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import ValidatableTextInput from '../../utilities/ValidatableTextInput'
 
-function TextNoteTitle(props) {
-
+function LinkNoteURL(props) {
+  
   /**
    * props.setIfEmpty();
    * props.ifInputValid
@@ -18,11 +18,12 @@ function TextNoteTitle(props) {
       setMessage("");
       setIsJustOpen(false);
       props.setIfEmpty(true);
-      return true;
+      return false;
     }
     if(str.length === 0){
       setMessage("");
       props.setIfEmpty(true);
+      return false;
     }
     else {
       props.setIfEmpty(false);
@@ -32,7 +33,7 @@ function TextNoteTitle(props) {
         return false;
       }
       else{
-        setMessage(`Title: ${str}`);
+        setMessage(`URL: ${str}`);
       }
     }
     return true;
@@ -45,10 +46,10 @@ function TextNoteTitle(props) {
   return (
     <ValidatableTextInput
         className="my-1"
-        inputID="notetext-input-title"
-        inputName="Please enter the note title (optional)"
-        helpID="notetext-input-title-help"
-        helpInfo="Enter the title here."
+        inputID="notelink-input-url"
+        inputName="Please enter the URL (required)"
+        helpID="notelink-input-url-help"
+        helpInfo="Enter the URL here."
         message={message}
         text={text}
         setText={setText}
@@ -56,4 +57,4 @@ function TextNoteTitle(props) {
   );
 }
 
-export default TextNoteTitle;
+export default LinkNoteURL;
