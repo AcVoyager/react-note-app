@@ -24,17 +24,24 @@ function CreatingProjectForm(props) {
       setIsJustOpen(false);
       return false;
     }
-    // console.log(str); // debug
+    console.log(typeof(str)); // debug
     if(str.length === 0){
       setMessage("The name of the new project cannot be empty!");
     }
-    else if(Object.keys(props.data).includes(str)) {
-      setMessage(`Name "${str}" is already used!`);
-    }
     else {
-      setMessage(`Name "${str}" is valid!`);
-      return true;
+      let reg = /^[a-zA-Z]+$/;
+      if(!reg.test(str[0])){
+        setMessage(`The first character has to be a letter.`);
+      }
+      else if(Object.keys(props.data).includes(str)) {
+        setMessage(`Name "${str}" is already used!`);
+      }
+      else {
+        setMessage(`Name "${str}" is valid!`);
+        return true;
+      }
     }
+    
     return false;
   }
 
