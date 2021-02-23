@@ -39,6 +39,7 @@ function TextNoteTitle(props) {
   }
 
   useEffect(() => {
+    props.setInputText(text);
     props.setIfInputValid(validateAndSetMessage(text));
   }, [text]);
 

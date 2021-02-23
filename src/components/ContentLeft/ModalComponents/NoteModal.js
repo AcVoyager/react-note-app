@@ -9,10 +9,12 @@ function NoteModal(props) {
    * props.data
    * props.noteTypes
    * props.setData()
+   * props.pushToData()
    */
   
   const NO_PROJECT = "no project"; 
 
+  const [formInfo, setFormInfo] = useState({});
   const [ifFormValid, setIfFormValid] = useState(false);
   const [noteTypes, setNoteTypes] = useState(Object.values(props.noteTypes));
   const [chosenNoteType, setChosenNoteType] = useState(Object.values(props.noteTypes)[0]);
@@ -20,16 +22,14 @@ function NoteModal(props) {
 
   const getNoteForm = () => {
     if(chosenNoteType === props.noteTypes.TEXT)
-      return <AddingTextForm setIfFormValid={setIfFormValid}/>;
+      return <AddingTextForm setIfFormValid={setIfFormValid} setFormInfo={setFormInfo}/>;
     
     if(chosenNoteType === props.noteTypes.LINK)
-      return <AddingLinkForm setIfFormValid={setIfFormValid}/>;
+      return <AddingLinkForm setIfFormValid={setIfFormValid} setFormInfo={setFormInfo}/>;
   }
   
-  const saveNote = () => {
-    console.log("save!");
-  }
-
+  const saveNote = () => props.pushToData(chosenProject, formInfo)
+  
   return (
     <div className="modal fade" id="noteModal" tabIndex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
       <div className="modal-dialog">

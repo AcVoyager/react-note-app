@@ -35,6 +35,7 @@ function LinkNoteContent(props) {
   }
 
   useEffect(() => {
+    props.setInputText(text);
     props.setIfInputValid(validateAndSetMessage(text));
   }, [text]);
 

@@ -10,15 +10,26 @@ function AddingLinkForm(props) {
   
   const WARNING_COLOR = "#FF7700";
   
+  const [url, setUrl] = useState("");
   const [ifURLEmpty, setIfURLEmpty] = useState(true);
   const [ifURLValid, setIfURLValid] = useState(false);
   // const [ifContentEmpty, setIfContentEmpty] = useState(true);
+  const [content, setContent] = useState("");
   const [ifContentValid, setIfContentValid] = useState(true);
 
   useEffect(() => {
     props.setIfFormValid(!ifURLEmpty && ifURLValid && ifContentValid);
   }, [ifURLEmpty, ifURLValid, ifContentValid])
   
+  useEffect(() => {
+    const newFormInfo = {
+      type: "link",
+      url: url,
+      text: content,
+    };
+    props.setFormInfo(newFormInfo);
+  }, [url, content])
+
   /*
     Do not do this: 
     props.setIfFormValid(!ifURLEmpty && ifURLValid && ifContentValid);
@@ -28,9 +39,9 @@ function AddingLinkForm(props) {
   return (
     <div className="my-2">
       <LinkNoteURL setIfEmpty={setIfURLEmpty} 
-        ifInputValid={ifURLValid} setIfInputValid={setIfURLValid}/>
+        ifInputValid={ifURLValid} setIfInputValid={setIfURLValid} setInputText={setUrl}/>
       <LinkNoteContent
-        ifInputValid={ifContentValid} setIfInputValid={setIfContentValid}/>
+        ifInputValid={ifContentValid} setIfInputValid={setIfContentValid} setInputText={setContent}/>
       <div>
         <p style={{color: WARNING_COLOR}}>
           {ifURLEmpty?

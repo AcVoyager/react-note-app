@@ -10,14 +10,25 @@ function AddingTextForm(props) {
   
   const WARNING_COLOR = "#FF7700";
   
+  const [title, setTitle] = useState("");
   const [ifTitleEmpty, setIfTitleEmpty] = useState(true);
   const [ifTitleValid, setIfTitleValid] = useState(true);
+  const [content, setContent] = useState("");
   const [ifContentEmpty, setIfContentEmpty] = useState(true);
   const [ifContentValid, setIfContentValid] = useState(true);
 
   useEffect(() => {
     props.setIfFormValid(!(ifTitleEmpty && ifContentEmpty) && ifTitleValid && ifContentValid);
   }, [ifTitleEmpty, ifContentEmpty, ifTitleValid, ifContentValid])
+
+  useEffect(() => {
+    const newFormInfo = {
+      type: "text",
+      title: title,
+      text: content,
+    };
+    props.setFormInfo(newFormInfo);
+  }, [title, content])
   
   /*
     Do not do this: 
@@ -28,9 +39,9 @@ function AddingTextForm(props) {
   return (
     <div className="my-2">
       <TextNoteTitle setIfEmpty={setIfTitleEmpty} 
-        ifInputValid={ifTitleValid} setIfInputValid={setIfTitleValid}/>
+        ifInputValid={ifTitleValid} setIfInputValid={setIfTitleValid} setInputText={setTitle}/>
       <TextNoteContent setIfEmpty={setIfContentEmpty} 
-        ifInputValid={ifContentValid} setIfInputValid={setIfContentValid}/>
+        ifInputValid={ifContentValid} setIfInputValid={setIfContentValid} setInputText={setContent}/>
       <div>
         <p style={{color: WARNING_COLOR}}>
           {ifTitleEmpty && ifContentEmpty ?
