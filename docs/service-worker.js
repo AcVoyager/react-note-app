@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/cs7580sp21-seattle/chang_xu_assignment2/precache-manifest.b83099eb62d930ce57fae8e60fbec813.js"
+  "/react-note-app/precache-manifest.24f43b93addc56176cba03fd20d90759.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/cs7580sp21-seattle/chang_xu_assignment2/index.html", {
+workbox.routing.registerNavigationRoute("/react-note-app/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
