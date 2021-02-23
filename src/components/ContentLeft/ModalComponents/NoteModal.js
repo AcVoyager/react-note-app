@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import SelectInput from '../utilities/SelectInput'
+import SelectInput from '../../utilities/SelectInput'
+import AddingTextForm from './AddingTextForm'
+import AddingLinkForm from './AddingLinkForm'
 
 function NoteModal(props) {
 
@@ -9,12 +11,21 @@ function NoteModal(props) {
    * props.setData()
    */
   
+  const NO_PROJECT = "no project"; 
+
   const [ifEnableButton, setIfEnableButton] = useState(false);
   const [noteTypes, setNoteTypes] = useState(Object.values(props.noteTypes));
-  const [chosenNoteType, setChosenNoteType] = useState(null);
+  const [chosenNoteType, setChosenNoteType] = useState(Object.values(props.noteTypes)[0]);
+  const [chosenProject, setChosenProject] = useState(NO_PROJECT);
 
-  const NO_PROJECT = "no project";
-
+  const getNoteForm = () => {
+    if(chosenNoteType === props.noteTypes.TEXT)
+      return <AddingTextForm />;
+    
+    if(chosenNoteType === props.noteTypes.LINK)
+      return <AddingLinkForm />;
+  }
+  
   const saveNote = () => {
 
   }
@@ -35,14 +46,20 @@ function NoteModal(props) {
               className="my-2"
               selectID="select-input-project"
               labelText="Select a project where the note will be added"
-              defaultOption={NO_PROJECT}/>
+              currentOption={chosenProject}
+              setOption={(option) => setChosenProject(option)}
+              />
 
             <SelectInput 
               options={noteTypes}
               className="my-2"
               selectID="select-input-note"
               labelText="Select a note type"
-              defaultOption={noteTypes[0]}/>
+              currentOption={chosenNoteType}
+              setOption={(option) => setChosenNoteType(option)}
+              />
+
+            {getNoteForm()}
 
           </div>
           

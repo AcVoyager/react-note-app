@@ -24,7 +24,7 @@ function CreatingProjectForm(props) {
       setIsJustOpen(false);
       return false;
     }
-    console.log(typeof(str)); // debug
+    // console.log(typeof(str)); // debug
     if(str.length === 0){
       setMessage("The name of the new project cannot be empty!");
     }
@@ -47,8 +47,8 @@ function CreatingProjectForm(props) {
 
   return (
     <form className="m-2">
-      <div className="mb-3">
         <ValidatableTextInput
+          className="mb-3"
           inputID="inputProjectName"
           inputName="Project Name"
           helpID="createHelp"
@@ -57,8 +57,7 @@ function CreatingProjectForm(props) {
           text={text}
           setText={setText}
           isValid={ifInputValid}
-        />
-      </div>
+          />
 
       <div className="d-flex justify-content-end">
 

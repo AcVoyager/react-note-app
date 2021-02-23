@@ -3,6 +3,7 @@ import React from 'react'
 function ValidatableTextInput(props) {
 
   /**
+   * props.className
    * props.inputID
    * props.inputName
    * props.helpID
@@ -19,7 +20,7 @@ function ValidatableTextInput(props) {
   };
   
   return (
-    <div>
+    <div className={props.className}>
 
       <label htmlFor={props.inputID} className="form-label">{props.inputName}</label>
         <input type="text" className="form-control" id={props.inputID} aria-describedby={props.helpID}
@@ -29,6 +30,7 @@ function ValidatableTextInput(props) {
         }}/>
 
         <div id={props.helpID} className="form-text">{props.helpInfo}</div>
+        
         {
           <p style={{color: props.isValid ? COLOR.SUCCESS : COLOR.ERROR}}>{props.message}</p>
         }

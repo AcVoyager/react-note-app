@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CollapseProjectsMenu from './CollapseProjectsMenu'
-import NoteModal from './NoteModal';
+import NoteModal from './ModalComponents/NoteModal';
 
 
 function ContentLeft(props) {
