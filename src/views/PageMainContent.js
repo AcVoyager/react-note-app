@@ -13,7 +13,7 @@ function PageMainContent(props) {
   const pushToData = (projectName, noteInfo) => {
     const newData = Object.assign(data);
     newData[projectName].push(noteInfo);
-    console.log(`${noteInfo} is added to ${projectName}`); //debug
+    console.log(`${JSON.stringify(noteInfo)} is added to ${projectName}`); //debug
     setData(newData);
   }
 

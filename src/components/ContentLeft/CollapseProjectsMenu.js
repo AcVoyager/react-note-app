@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CreatingProjectForm from './CreatingProjectForm';
 import ProjectItem from './ProjectItem';
 
@@ -54,6 +54,9 @@ function CollapseProjectsMenu(props) {
     <div className="collapse show mx-1 mt-1" id="collapseProjectsMenu">
 
       <div className="div-create-project">
+
+        {/* simple indicator for debugging */}
+        <p>{props.data["Learn React"].length}</p>
 
         <button type="button" className="btn btn-outline-primary my-2" id="create-new-button"
           onClick={() => {setIfShowForm(!ifShowForm)}}>

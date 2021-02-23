@@ -28,7 +28,7 @@ function NoteModal(props) {
       return <AddingLinkForm setIfFormValid={setIfFormValid} setFormInfo={setFormInfo}/>;
   }
   
-  const saveNote = () => props.pushToData(chosenProject, formInfo)
+  // const saveNote = () => props.pushToData(chosenProject, formInfo)
   
   return (
     <div className="modal fade" id="noteModal" tabIndex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
@@ -67,7 +67,7 @@ function NoteModal(props) {
             <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Close</button>
             <button type="button" className="btn btn-primary" data-bs-dismiss="modal"
               disabled={!ifFormValid}
-              onClick={saveNote}>
+              onClick={() => props.pushToData(chosenProject, formInfo)}>
               Save Note
             </button> 
           </div>

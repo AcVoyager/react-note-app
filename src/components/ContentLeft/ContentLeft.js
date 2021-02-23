@@ -32,7 +32,8 @@ function ContentLeft(props) {
         </button>
       </div>
 
-      <NoteModal data={props.data} setData={props.setData} noteTypes={props.noteTypes}/>
+      <NoteModal data={props.data} setData={props.setData} noteTypes={props.noteTypes} 
+        pushToData={props.pushToData}/>
 
       <div className="d-flex flex-column">
 
