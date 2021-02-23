@@ -18,7 +18,7 @@ html, body
 
 .div-app {
     min-height: 100vh;
-    background-color: #f8f8d9;
+    background-color: #f8f8b8;
 }
 
 .main-heading {
@@ -37,13 +37,18 @@ html, body
 
 /* main content */
 
-.main-content-left {
-  background-color:azure;
+.main-content {
+  background-color:rgb(255, 255, 255, 0.5);
 }
 
-.main-content-right {
-  background-color:azure;
+.main-content-left {
+  /* background-color:azure; */
+  border-right: thin solid lightgrey;
 }
+
+/* .main-content-right {
+  background-color:azure;
+} */
 
 /* left part of main content */
 
@@ -61,9 +66,10 @@ html, body
 .note {
   height: 100%;
   /* background-color: #f8f8d9; */
-  border-color: lightgrey;
   border-width: thin;
   border-style: solid;
+  border-color: lightgrey;
+  border-radius: 2%;
 }
 
 /* .note-text {
@@ -83,6 +89,6 @@ html, body
 } */
 
 .note-link-displayed {
-  font-weight: bold;
+  /* font-weight: bold; */
   color: black;
 }
