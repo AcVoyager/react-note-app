@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c135e6952d43a7277ef1",
-    "url": "/cs7580sp21-seattle/chang_xu_assignment2/static/css/main.88758fee.chunk.css"
+    "revision": "65c041ed75cf2ab4fa2d",
+    "url": "/cs7580sp21-seattle/chang_xu_assignment2/static/css/main.3d1c95d9.chunk.css"
   },
   {
-    "revision": "c135e6952d43a7277ef1",
-    "url": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/main.c135e695.chunk.js"
+    "revision": "65c041ed75cf2ab4fa2d",
+    "url": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/main.65c041ed.chunk.js"
   },
   {
     "revision": "e4cd938c94af46ecb280",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/runtime~main.995b4fa0.js"
   },
   {
-    "revision": "8432aa5861152f4c617321e663d07f25",
+    "revision": "0b528eaddba2b9d7a2f14952026b08dc",
     "url": "/cs7580sp21-seattle/chang_xu_assignment2/index.html"
   }
 ];
