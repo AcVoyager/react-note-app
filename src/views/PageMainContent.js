@@ -17,7 +17,8 @@ function PageMainContent(props) {
 				<div className="col-md-3 main-content-left">
           <ContentLeft 
             data={data} setData={setData}
-            checkedProjects={checkedProjects} setCheckedProjects={setCheckedProjects}/>
+            checkedProjects={checkedProjects} setCheckedProjects={setCheckedProjects}
+            noteTypes={noteTypes}/>
 				</div>
 
 				{/* right part for notes */}

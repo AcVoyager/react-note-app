@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import CollapseProjectsMenu from './CollapseProjectsMenu'
+import NoteModal from './NoteModal';
+
 
 function ContentLeft(props) {
 
   /**
    * props.data
+   * props.noteTypes
    * props.setData()
    * props.checkedProjects
    * props.setCheckedProjects()
@@ -23,10 +26,13 @@ function ContentLeft(props) {
       
       <div className="mx-auto my-3">
         {/* use padding to adjust the w and h of the button */}
-        <button type="button" className="btn btn-outline-success btn-add px-4 py-3"> 
+        <button type="button" className="btn btn-outline-success btn-add px-4 py-3"
+          data-bs-toggle="modal" data-bs-target="#noteModal"> 
           <span>Add a note</span>
         </button>
       </div>
+
+      <NoteModal data={props.data} setData={props.setData} noteTypes={props.noteTypes}/>
 
       <div className="d-flex flex-column">
 
