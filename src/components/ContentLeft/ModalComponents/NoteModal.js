@@ -13,21 +13,21 @@ function NoteModal(props) {
   
   const NO_PROJECT = "no project"; 
 
-  const [ifEnableButton, setIfEnableButton] = useState(false);
+  const [ifFormValid, setIfFormValid] = useState(false);
   const [noteTypes, setNoteTypes] = useState(Object.values(props.noteTypes));
   const [chosenNoteType, setChosenNoteType] = useState(Object.values(props.noteTypes)[0]);
   const [chosenProject, setChosenProject] = useState(NO_PROJECT);
 
   const getNoteForm = () => {
     if(chosenNoteType === props.noteTypes.TEXT)
-      return <AddingTextForm />;
+      return <AddingTextForm setIfFormValid={setIfFormValid}/>;
     
     if(chosenNoteType === props.noteTypes.LINK)
-      return <AddingLinkForm />;
+      return <AddingLinkForm setIfFormValid={setIfFormValid}/>;
   }
   
   const saveNote = () => {
-
+    console.log("save!");
   }
 
   return (
@@ -66,7 +66,7 @@ function NoteModal(props) {
           <div className="modal-footer">
             <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Close</button>
             <button type="button" className="btn btn-primary" data-bs-dismiss="modal"
-              disabled={!ifEnableButton}
+              disabled={!ifFormValid}
               onClick={saveNote}>
               Save Note
             </button> 

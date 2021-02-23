@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TextNoteTitle from './TextNoteTitle'
 import TextNoteContent from './TextNoteContent'
 
 function AddingTextForm(props) {
+
+  /**
+   * props.setIfFormValid()
+   */
   
   const WARNING_COLOR = "#FF7700";
   
@@ -10,6 +14,16 @@ function AddingTextForm(props) {
   const [ifTitleValid, setIfTitleValid] = useState(true);
   const [ifContentEmpty, setIfContentEmpty] = useState(true);
   const [ifContentValid, setIfContentValid] = useState(true);
+
+  useEffect(() => {
+    props.setIfFormValid(!(ifTitleEmpty && ifContentEmpty) && ifTitleValid && ifContentValid);
+  }, [ifTitleEmpty, ifContentEmpty, ifTitleValid, ifContentValid])
+  
+  /*
+    Do not do this: 
+    props.setIfFormValid(!(ifTitleEmpty && ifContentEmpty) && ifTitleValid && ifContentValid);
+    It will cause an error(warning): "Cannot update a component from inside the function body of a different component."
+  */
 
   return (
     <div className="my-2">

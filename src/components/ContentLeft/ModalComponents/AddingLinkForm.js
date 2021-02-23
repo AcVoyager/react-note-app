@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import LinkNoteURL from './LinkNoteURL'
 import LinkNoteContent from './LinkNoteContent'
 
 function AddingLinkForm(props) {
+
+  /**
+   * props.setIfFormValid()
+   */
   
   const WARNING_COLOR = "#FF7700";
   
@@ -10,6 +14,16 @@ function AddingLinkForm(props) {
   const [ifURLValid, setIfURLValid] = useState(false);
   // const [ifContentEmpty, setIfContentEmpty] = useState(true);
   const [ifContentValid, setIfContentValid] = useState(true);
+
+  useEffect(() => {
+    props.setIfFormValid(!ifURLEmpty && ifURLValid && ifContentValid);
+  }, [ifURLEmpty, ifURLValid, ifContentValid])
+  
+  /*
+    Do not do this: 
+    props.setIfFormValid(!ifURLEmpty && ifURLValid && ifContentValid);
+    It will cause an error(warning): "Cannot update a component from inside the function body of a different component."
+  */
 
   return (
     <div className="my-2">
