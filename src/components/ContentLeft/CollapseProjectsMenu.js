@@ -20,6 +20,7 @@ function CollapseProjectsMenu(props) {
    *   },
    * ]
    */
+  
   const getProjectArray = () => {
     const entries = Object.entries(props.data);
     const arr =  entries.map((entry, index) => {
@@ -43,7 +44,7 @@ function CollapseProjectsMenu(props) {
   // when creating a new project, update props.checkedProjects
   const addToCheckedProjects = (newProjectName) => {
     const newCheckedProjects = props.checkedProjects.slice();
-    newCheckedProjects.unshift(newProjectName);
+    newCheckedProjects.push(newProjectName);
     props.setCheckedProjects(newCheckedProjects);
   }
 
@@ -76,10 +77,11 @@ function CollapseProjectsMenu(props) {
       </div>
 
       <ul className="list-group mb-3">
-        {
-          getProjectArray().map((project, index) => 
+        { 
+          // The way to treat key here is to make sure the key of old one never changes
+          getProjectArray().slice().reverse().map((project, index) => 
             project.projectName?
-            <ProjectItem key={index} 
+            <ProjectItem key={Object.keys(props.data).length - index} 
               projectName={project.projectName} num={project.noteNum}
               checkedProjects={props.checkedProjects} setCheckedProjects={props.setCheckedProjects}/>
             : null

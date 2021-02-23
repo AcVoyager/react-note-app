@@ -14,11 +14,11 @@ html, body
     overflow-x: hidden; 
 }
 
-/* ------ Inherit from assignment1------ */
+/* page view styles */
 
 .div-app {
-    height: 100vh;
-    /* background-color: #f8f8d9; */
+    min-height: 100vh;
+    background-color: #f8f8d9;
 }
 
 .main-heading {
@@ -33,4 +33,32 @@ html, body
     margin: auto;
     /* margin-top: auto; */
     /* margin-bottom: auto; */
+}
+
+/* main content */
+
+.main-content-left {
+  background-color: lightgrey;
+}
+
+.main-content-right {
+  background-color: lightgrey;
+}
+
+/* left part of main content */
+
+#create-new-button {
+    width: 100%;
+}
+
+/* right part of main content */
+
+.project-area {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.note {
+  border-color: rgba(100, 148, 237, 0.438);
+  border-style: dotted;
 }

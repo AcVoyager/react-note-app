@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ContentLeft from '../components/ContentLeft/ContentLeft';
 import ContentRight from '../components/ContentRight/ContentRight';
 
-import '../styles/mainContent.css';
 import originalData, {NOTE_TYPE} from "../data/data";
 
 function PageMainContent(props) {

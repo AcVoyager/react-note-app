@@ -1,8 +1,6 @@
 import React from 'react';
 import ProjectArea from './ProjectArea';
 
-import "../../styles/rightMainContent.css";
-
 function ContentRight(props) {
 
   /**
@@ -12,23 +10,21 @@ function ContentRight(props) {
    * props.setCheckedProjects()
    * props.noteTypes
    */
+  
+  const createReversedCopy = () => props.checkedProjects.slice().reverse()
 
   return (
 
     <div className="container-fluid d-flex flex-column">
       {
-        props.checkedProjects.map((projectName, index) => 
-          <ProjectArea key={index}
+        createReversedCopy().map((projectName, index) => 
+          <ProjectArea // The way to treat key here is to make sure the key of old one never changes
+            key={props.checkedProjects.length - index} projectID={index}
             projectName={projectName} noteArray={props.data[projectName]}
             noteTypes={props.noteTypes}/>
         )
       }
     </div>
-
-    // test for checkbox logic only
-    // <div>
-    //   {props.checkedProjects.map((value, index) => <p key={index}>{value}</p>)}
-    // </div>
     
   );
 

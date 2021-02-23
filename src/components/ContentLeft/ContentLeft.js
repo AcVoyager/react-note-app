@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CollapseProjectsMenu from './CollapseProjectsMenu'
-
-import "../../styles/leftMainContent.css";
 
 function ContentLeft(props) {
 
@@ -11,6 +9,13 @@ function ContentLeft(props) {
    * props.checkedProjects
    * props.setCheckedProjects()
    */
+
+  const BUTTON_TEXT = {
+    TOSHOW: "Show project panel",
+    TOHIDE: "Hide project panel"
+  }
+
+  const [ifShow, setIfShow] = useState(true);
 
   return (
 
@@ -27,9 +32,10 @@ function ContentLeft(props) {
 
         <hr className="mt-0"/>
 
-        <button className="btn btn-outline-secondary mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProjectsMenu" 
-          aria-expanded="true" aria-controls="collapseProjectsMenu">
-          <span>Toggle projects panel</span>
+        <button className="btn btn-secondary mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProjectsMenu" 
+          aria-expanded="true" aria-controls="collapseProjectsMenu"
+          onClick={() => {setIfShow(!ifShow)}}>
+          <span>{ifShow ? BUTTON_TEXT.TOHIDE : BUTTON_TEXT.TOSHOW}</span>
         </button>
 
         <CollapseProjectsMenu 

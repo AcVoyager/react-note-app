@@ -15,7 +15,7 @@ function ProjectItem(props) {
     const newCheckedStatus = !isChecked;
     const newCheckedProjects = props.checkedProjects.slice();
     if(newCheckedStatus){ // add
-      newCheckedProjects.unshift(props.projectName);
+      newCheckedProjects.push(props.projectName);
     }
     else { // remove
       const index = newCheckedProjects.indexOf(props.projectName);

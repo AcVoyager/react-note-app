@@ -10,13 +10,13 @@ function Note(props) {
 	 */
 
 	const getSubComponent = () => {
-		if(props.noteInfo.type == props.noteTypes.TEXT) {
+		if(props.noteInfo.type === props.noteTypes.TEXT) {
 			return (
 				<Text title={props.noteInfo.title} text={props.noteInfo.text}/>
 			);
 		}
 	
-		if(props.noteInfo.type == props.noteTypes.LINK) {
+		if(props.noteInfo.type === props.noteTypes.LINK) {
 			return (
 				<Link url={props.noteInfo.url} text={props.noteInfo.text}/>
 			);
@@ -26,7 +26,7 @@ function Note(props) {
 	return (
 
 		// <div className="note-div col-md-6 col-lg-4 col-xl-3 col-xxl-2">
-		<div className="note-div col-sm-6 col-xl-3">
+		<div className="note col-md-6 col-xl-3 p-2">
 			{getSubComponent()}
 		</div>
 
