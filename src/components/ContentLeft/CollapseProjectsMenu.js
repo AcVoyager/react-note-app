@@ -56,7 +56,7 @@ function CollapseProjectsMenu(props) {
       <div className="div-create-project">
 
         {/* simple indicator for debugging */}
-        <p>{props.data["Learn React"].length}</p>
+        <p>{"Indicator for props.data change: " + props.data["Learn React"].length}</p>
 
         <button type="button" className="btn btn-outline-primary my-2" id="create-new-button"
           onClick={() => {setIfShowForm(!ifShowForm)}}>
