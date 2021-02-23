@@ -25,7 +25,6 @@ export default {
         {
             type: NOTE_TYPE.TEXT,
             title: "Create a new project",
-            text: "cd to the project directory\nnpx create-react-app project-name\ncd project-name\nnpm start"
         },
         {
             type: NOTE_TYPE.LINK,
@@ -39,7 +38,6 @@ export default {
         },
         {
             type: NOTE_TYPE.TEXT,
-            title: "Create a new project",
             text: "cd to the project directory\nnpx create-react-app project-name\ncd project-name\nnpm start"
         },
         {
@@ -64,6 +62,11 @@ export default {
             type: NOTE_TYPE.LINK,
             url: "https://loremipsum.io/generator/",
             text: "Lorem Ipsum generator"
-        }
+        },
+        {
+            type: NOTE_TYPE.LINK,
+            url: "https://loremipsum.io/generator/",
+
+        },
     ]
 }

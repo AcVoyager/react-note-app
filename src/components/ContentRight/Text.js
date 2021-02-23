@@ -8,13 +8,18 @@ function Text(props) {
    */
 
   return (
-    <div>
+    <div className="note note-text p-2">
 
-      <div>
-        {props.title}
+      <div className="note-type note-type-text text-muted pt-2">
+        <h6>Text</h6>
+        <hr className="my-1"/>
       </div>
 
-      <div>
+      <div className="note-text-title">
+        <h4>{props.title}</h4>
+      </div>
+
+      <div className="note-text-content">
         {props.text}
       </div>
       

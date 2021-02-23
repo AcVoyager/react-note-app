@@ -26,7 +26,7 @@ function Note(props) {
 	return (
 
 		// <div className="note-div col-md-6 col-lg-4 col-xl-3 col-xxl-2">
-		<div className="note col-md-6 col-xl-3 p-2">
+		<div className="col-md-6 col-xl-4 p-2">
 			{getSubComponent()}
 		</div>
 

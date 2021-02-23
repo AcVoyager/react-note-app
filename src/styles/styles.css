@@ -23,7 +23,7 @@ html, body
 
 .main-heading {
     height: 10vh;
-    background-color: #f8f8d9;
+    /* background-color: #f8f8d9; */
 }
 
 .main-heading > p {
@@ -38,11 +38,11 @@ html, body
 /* main content */
 
 .main-content-left {
-  background-color: lightgrey;
+  background-color:azure;
 }
 
 .main-content-right {
-  background-color: lightgrey;
+  background-color:azure;
 }
 
 /* left part of main content */
@@ -59,6 +59,30 @@ html, body
 }
 
 .note {
-  border-color: rgba(100, 148, 237, 0.438);
-  border-style: dotted;
+  height: 100%;
+  /* background-color: #f8f8d9; */
+  border-color: lightgrey;
+  border-width: thin;
+  border-style: solid;
+}
+
+/* .note-text {
+  background-color: #f8f8d9;
+} */
+
+/* .note-type-text {
+  background-color: #f1f1b3;
+} */
+
+/* .note-link {
+  background-color: #cddfe1;
+} */
+
+/* .note-type-link {
+  background-color: #9abec3;
+} */
+
+.note-link-displayed {
+  font-weight: bold;
+  color: black;
 }

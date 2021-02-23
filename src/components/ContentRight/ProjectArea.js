@@ -20,7 +20,7 @@ function ProjectArea(props) {
   const getNoteAreaID = () => "NoteArea" + props.projectID;
 
   return (
-    <div className="container-fluid project-area mt-3">
+    <div className="container-fluid project-area my-3">
       
       <div className="project-area-head d-flex align-items-center">
 
