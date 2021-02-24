@@ -1,7 +1,7 @@
 {
-  "main.css": "/cs7580sp21-seattle/chang_xu_assignment2/static/css/main.3d1c95d9.chunk.css",
-  "main.js": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/main.65c041ed.chunk.js",
-  "main.js.map": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/main.65c041ed.chunk.js.map",
+  "main.css": "/cs7580sp21-seattle/chang_xu_assignment2/static/css/main.82a8401e.chunk.css",
+  "main.js": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/main.06f497ec.chunk.js",
+  "main.js.map": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/main.06f497ec.chunk.js.map",
   "static/js/1.e4cd938c.chunk.js": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/1.e4cd938c.chunk.js",
   "static/js/1.e4cd938c.chunk.js.map": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/1.e4cd938c.chunk.js.map",
   "static/css/2.50c02d76.chunk.css": "/cs7580sp21-seattle/chang_xu_assignment2/static/css/2.50c02d76.chunk.css",
@@ -9,9 +9,9 @@
   "static/js/2.0ce7e5b9.chunk.js.map": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/2.0ce7e5b9.chunk.js.map",
   "runtime~main.js": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/runtime~main.995b4fa0.js",
   "runtime~main.js.map": "/cs7580sp21-seattle/chang_xu_assignment2/static/js/runtime~main.995b4fa0.js.map",
+  "static/css/main.82a8401e.chunk.css.map": "/cs7580sp21-seattle/chang_xu_assignment2/static/css/main.82a8401e.chunk.css.map",
   "static/css/2.50c02d76.chunk.css.map": "/cs7580sp21-seattle/chang_xu_assignment2/static/css/2.50c02d76.chunk.css.map",
-  "static/css/main.3d1c95d9.chunk.css.map": "/cs7580sp21-seattle/chang_xu_assignment2/static/css/main.3d1c95d9.chunk.css.map",
   "index.html": "/cs7580sp21-seattle/chang_xu_assignment2/index.html",
-  "precache-manifest.b83099eb62d930ce57fae8e60fbec813.js": "/cs7580sp21-seattle/chang_xu_assignment2/precache-manifest.b83099eb62d930ce57fae8e60fbec813.js",
+  "precache-manifest.82a9ede1cac18d7b81bfd1e42c72a56b.js": "/cs7580sp21-seattle/chang_xu_assignment2/precache-manifest.82a9ede1cac18d7b81bfd1e42c72a56b.js",
   "service-worker.js": "/cs7580sp21-seattle/chang_xu_assignment2/service-worker.js"
 }
