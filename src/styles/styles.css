@@ -43,6 +43,7 @@ html, body
 
 .main-content-left {
   /* background-color:azure; */
+  /* border-bottom: thin solid lightgrey; */
   border-right: thin solid lightgrey;
 }
 

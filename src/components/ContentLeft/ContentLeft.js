@@ -37,7 +37,7 @@ function ContentLeft(props) {
 
       <div className="d-flex flex-column">
 
-        <hr className="mt-0"/>
+        {/* <hr className="mt-0"/> */}
 
         <button className="btn btn-secondary mx-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProjectsMenu" 
           aria-expanded="true" aria-controls="collapseProjectsMenu"

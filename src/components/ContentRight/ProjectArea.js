@@ -24,7 +24,7 @@ function ProjectArea(props) {
       
       <div className="project-area-head d-flex align-items-center">
 
-        <span className="h3 mb-0 me-3">{props.projectName}</span>
+        <span className="h2 mb-0 me-3">{props.projectName}</span>
 
         <button className="btn btn-secondary" type="button" 
           data-bs-toggle="collapse" data-bs-target={"#"+getNoteAreaID()} aria-expanded="true" aria-controls={getNoteAreaID()}
