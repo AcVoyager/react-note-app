@@ -10,8 +10,9 @@ function Text(props) {
   return (
     <div className="note note-text p-2">
 
-      <div className="note-type note-type-text text-muted pt-2">
-        <h6>Text</h6>
+      <div className="note-type note-type-text text-muted pt-1">
+        {/* <h6>Text</h6> */}
+        <span className="h6">Text</span>
         <hr className="my-1"/>
       </div>
 

@@ -61,7 +61,6 @@ html, body
 
 .project-area {
     word-wrap: break-word;
-    white-space: pre-wrap;
 }
 
 .note {
@@ -73,9 +72,10 @@ html, body
   border-radius: 2%;
 }
 
-/* .note-text {
-  background-color: #f8f8d9;
-} */
+.note-text {
+  white-space: pre-wrap;
+  /* background-color: #f8f8d9; */
+}
 
 /* .note-type-text {
   background-color: #f1f1b3;

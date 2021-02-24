@@ -10,8 +10,9 @@ function Link(props) {
   return (
     <div className="note note-link p-2">
 
-      <div className="note-type note-type-link text-muted pt-2">
-        <h6>Link</h6>
+      <div className="note-type note-type-link text-muted pt-1">
+        {/* <h6>Link</h6> */}
+        <span className="h6">Link</span>
         <hr className="my-1"/>
       </div>
 
